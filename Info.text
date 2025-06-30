@@ -1,0 +1,64 @@
+
+1 - npm run dev
+2 - npx inngest-cli@latest dev / npx inngest-cli@latest dev --no-discovery -u http://localhost:3000/api/inngest
+3 - npx drizzle-kit push / npx drizzle-kit studio
+only cheking api roadmap id : /ai-tools/ai-roadmap-agent
+1 - HTML,CSS,Javscript
+2 - React js
+3 - Next js
+4 - Tailwind CSS
+5 - shadcn ui
+6 - inngest
+7 - drizzle
+8 - langchain.js
+9 - https://clerk.com/
+10 - clerk Blling
+11 - https://imagekit.io/
+12 - https://www.radix-ui.com/
+13 - NPM packages : axios npm , inngest agent-kit,uuid
+14 - https://llm.mlc.ai/
+15 - neon Database 
+16 - reactflow
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+npm run dev
+
+   
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+npm run dev
+
+For the chat Chat Ai aget 
+inngest run commd
+npx inngest-cli@latest dev
+
+Data Base
+if you have update youer schema.ts
+then we need to push all data to the database
+Online/cloude Data Base:  npx drizzle-kit push
+Local Data Base 
+locallhost: npx drizzle-kit studio
+
+
+
+
+
+Chages in the ai-resume-agent: route.jsx
+
+
+=========================================================================
+
+Free API For the project: 
+google studio Gemini API For the Chatbot = AIzaSyByBq6jCdbr1o2WiiFIGVIDmgc6qZmlG6c
+1:27:00
+
+For the Resume anyalizer  
+https://imagekit.io/
+
+Set-up ImageKit ID : y5gpxt4qh
+PASS: gAIKWAD$3589
+
+
+============================================
+
+All Data will shoe on those webiste :
+https://imagekit.io/
+https://clerk.com/
