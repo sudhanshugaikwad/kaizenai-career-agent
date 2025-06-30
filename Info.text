@@ -62,3 +62,15 @@ PASS: gAIKWAD$3589
 All Data will shoe on those webiste :
 https://imagekit.io/
 https://clerk.com/
+
+
+
+
+==================================================
+push code on github
+
+
+git remote remove origin
+git remote add origin https://github.com/sudhanshugaikwad/your-repo-name.git
+git branch -M main
+git push -u origin main
