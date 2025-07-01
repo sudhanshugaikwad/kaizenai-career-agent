@@ -190,18 +190,18 @@ function RoadmapGeneratorDialog({ openDialog, setOpenDialog }: any) {
     try {
       // This is Subscription plan Code
       // @ts-ignore
-      const hasSubscriptionEnabled = await has({ plan: "pro" });
-      if (!hasSubscriptionEnabled) {
-        const resutHistory = await axios.get("/api/history");
-        const historyList = resutHistory.data;
-        const isPresent = await historyList.find(
-          (item: any) => item?.aiAgentType == "/ai-tools/ai-roadmap-agent"
-        );
-        router.push("/billing");
-        if (isPresent) {
-          return null;
-        }
-      }
+      // const hasSubscriptionEnabled = await has({ plan: "pro" });
+      // if (!hasSubscriptionEnabled) {
+      //   const resutHistory = await axios.get("/api/history");
+      //   const historyList = resutHistory.data;
+      //   const isPresent = await historyList.find(
+      //     (item: any) => item?.aiAgentType == "/ai-tools/ai-roadmap-agent"
+      //   );
+      //   router.push("/billing");
+      //   if (isPresent) {
+      //     return null;
+      //   }
+      // }
 
       const result = await axios.post("/api/ai-roadmap-agent", {
         roadmapId,
