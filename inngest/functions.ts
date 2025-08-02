@@ -29,39 +29,78 @@ export const AiCareerChatAgent = createAgent({
 export const AIRoadmapGeneratorAgent = createAgent({
   name: "AIRoadmapGeneratorAgent",
   description: "Generate Details Tree Like Flow Roadmap",
-  system: `Generate a React flow tree-structured learning roadmap for user input position/skills the following format:
-Vertical tree structure with meaningful x/y positions to form a flow
-• Structure should be similar to roadmap.sh layout
-• Steps should be ordered from fundamentals to advanced
-• Include branching for different specializations (if applicable)
-• Each node must have a title, short description, and learning resource link
-• Use unique IDs for all nodes and edges
-• Make it more spacious node position,
-• Response in JSON format
+  system: `You are a roadmap layout generator.
+Generate a React Flow-compatible JSON structure that outlines a learning roadmap from fundamentals to advanced.
+
+Follow these rules:
+• Use vertical Y-spacing of at least 150px between levels in the same path.
+• Use horizontal X-spacing of 250px for branches/specializations.
+• Follow vertical tree layout similar to roadmap.sh
+• Each step (node) should have:
+  - id (unique string)
+  - type: "turbo"
+  - position: { x, y }
+  - data: {
+      title: "Step Title",
+      description: "Short description",
+      link: "Helpful resource"
+    }
+• Each connection (edge) should have:
+  - id: "e1-2"
+  - source: "1"
+  - target: "2"
+
+Example layout:
 {
-  "roadmapTitle": "",
-  "description": "<3-5 Lines>",
-  "duration": "",
+  "roadmapTitle": "Frontend Developer Roadmap",
+  "description": "This roadmap helps you become a frontend developer. Follow each step from basic to advanced concepts.",
+  "duration": "4-6 months",
   "initialNodes": [
     {
       "id": "1",
       "type": "turbo",
-      "position": { "x": 5, "y": 5 },
+      "position": { "x": 0, "y": 0 },
       "data": {
-        "title": "Step Title",
-        "description": "Short two-line explanation of what the step covers.",
-        "link": "Helpful link for learning this step"
+        "title": "HTML Basics",
+        "description": "Learn HTML elements, tags, and structure.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/HTML"
       }
     },
-    ...
+    {
+      "id": "2",
+      "type": "turbo",
+      "position": { "x": 0, "y": 150 },
+      "data": {
+        "title": "CSS Fundamentals",
+        "description": "Style your web pages with layouts, colors, fonts.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+      }
+    },
+    {
+      "id": "3",
+      "type": "turbo",
+      "position": { "x": 0, "y": 300 },
+      "data": {
+        "title": "JavaScript Basics",
+        "description": "Add interactivity to web apps using JS.",
+        "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+      }
+    },
+    {
+      "id": "4",
+      "type": "turbo",
+      "position": { "x": 250, "y": 150 },
+      "data": {
+        "title": "React.js",
+        "description": "Build UI using components and hooks.",
+        "link": "https://react.dev"
+      }
+    }
   ],
   "initialEdges": [
-    {
-      "id": "e1-2",
-      "source": "1",
-      "target": "2"
-    },
-    ...
+    { "id": "e1-2", "source": "1", "target": "2" },
+    { "id": "e2-3", "source": "2", "target": "3" },
+    { "id": "e2-4", "source": "2", "target": "4" }
   ]
 }`,
   model: gemini({
@@ -237,6 +276,7 @@ export const AiRoadMapAgent = inngest.createFunction(
     const parseJson = JSON.parse(rawContentJson);
 
     // // Save to Database result
+
     const saveToDb = await step.run("SaveToDb", async () => {
       const result = await db.insert(HistoryTable).values({
         recordId: roadmapId,

@@ -7,6 +7,10 @@ import googlepay from "./icons/googlepay.png";
 import { SignIn, SignInButton, UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 
+import HowItWorksSection from "./HowItWorksSection";
+import HeroSection from "./HeroSection";
+import Footer from "./Footer";
+import ServicesSection from "./ServicesSection";
 export default function Home() {
   // const user = useAuthContext();
   // console.log(user?.user)
@@ -57,8 +61,8 @@ export default function Home() {
           </div>
         </nav>
       </header>
-
-      <div className="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
+      {/* Hero Section */}
+      {/* <div className="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] dark:before:bg-[url('https://preline.co/assets/svg/examples-dark/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
         <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
           <div className="flex justify-center">
             <a
@@ -90,16 +94,16 @@ export default function Home() {
             <h1 className="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
               Land Your Dream Job With
               <span className="bg-clip-text bg-gradient-to-tl from-blue-600 to-violet-600 text-transparent">
-                Kaizen Ai Career Agent
+                Kaizen Ai
               </span>
             </h1>
           </div>
 
           <div className="mt-5 max-w-3xl text-center mx-auto">
             <p className="text-lg text-gray-600 dark:text-neutral-400">
-              Revolutionize your content creation and development workflow with
-              our Kaizen Ai platform. Instantly generate engaging, high-quality
-              applications that elevate your productivity and creativity.
+              Kaizen Ai powered career assistant for job seekers, students, and
+              working professionals. Use tools like Resume Analyzer, Roadmap
+              Generator & more.
             </p>
           </div>
 
@@ -128,126 +132,17 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </div>
+      </div>  */}
+      <HeroSection />
+      {/* Service section  */}
+      <ServicesSection />
 
       {/* How It Works Section */}
-      <section className="relative w-full bg-white py-16 dark:bg-gray-950 border-b border-[0.1px] border-gray-300">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-12 text-gray-800 dark:text-white">
-            How It Works
-          </h2>
-
-          <div className="rounded-2xl bg-gray-50 p-6 dark:bg-gray-900">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-gray-700 dark:text-gray-300">
-              {/* Step 1 */}
-              <li className="flex items-start">
-                <svg
-                  className="mt-1 h-6 w-6 shrink-0 text-sky-500 dark:text-sky-300"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  strokeLinecap="square"
-                >
-                  <circle
-                    cx="11"
-                    cy="11"
-                    r="11"
-                    className="fill-current opacity-25"
-                  />
-                  <circle
-                    cx="11"
-                    cy="11"
-                    r="10.5"
-                    className="stroke-current opacity-25"
-                  />
-                  <path d="M8 11.5L10.5 14L14 8" className="stroke-current" />
-                </svg>
-                <div className="ml-4">
-                  <h3 className=" font-semibold text-2xl text-gray-800 dark:text-white">
-                    1. Create Account
-                  </h3>
-                  <p className="mt-1 text-sm">
-                    Sign up in seconds to access your personalized AI career
-                    dashboard.
-                  </p>
-                </div>
-              </li>
-
-              {/* Step 2 */}
-              <li className="flex items-start">
-                <svg
-                  className="mt-1 h-6 w-6 shrink-0 text-sky-500 dark:text-sky-300"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  strokeLinecap="square"
-                >
-                  <circle
-                    cx="11"
-                    cy="11"
-                    r="11"
-                    className="fill-current opacity-25"
-                  />
-                  <circle
-                    cx="11"
-                    cy="11"
-                    r="10.5"
-                    className="stroke-current opacity-25"
-                  />
-                  <path d="M8 11.5L10.5 14L14 8" className="stroke-current" />
-                </svg>
-                <div className="ml-4">
-                  <h3 className=" font-semibold text-2xl text-gray-800 dark:text-white">
-                    2. Select a Service
-                  </h3>
-                  <p className="mt-1 text-sm">
-                    Choose from AI-powered tools like Career Q&A Chat, Resume
-                    Analyzer, Learning Roadmap, and Cover Letter Generator.
-                  </p>
-                </div>
-              </li>
-
-              {/* Step 3 */}
-              <li className="flex items-start">
-                <svg
-                  className="mt-1 h-6 w-6 shrink-0 text-sky-500 dark:text-sky-300"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  strokeLinecap="square"
-                >
-                  <circle
-                    cx="11"
-                    cy="11"
-                    r="11"
-                    className="fill-current opacity-25"
-                  />
-                  <circle
-                    cx="11"
-                    cy="11"
-                    r="10.5"
-                    className="stroke-current opacity-25"
-                  />
-                  <path d="M8 11.5L10.5 14L14 8" className="stroke-current" />
-                </svg>
-                <div className="ml-4">
-                  <h3 className=" font-semibold text-2xl text-gray-800 dark:text-white">
-                    3. Free to Use
-                  </h3>
-                  <p className="mt-1 text-sm">
-                    Enjoy unlimited access to all features completely free
-                    designed to elevate your career journey.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Background Grid Pattern */}
-        <div className="pointer-events-none absolute inset-0 z-[-1] bg-[repeating-linear-gradient(315deg,rgba(30,41,59,0.05)_0,rgba(30,41,59,0.05)_1px,transparent_0,transparent_50%)] bg-[size:10px_10px] dark:bg-[repeating-linear-gradient(315deg,rgba(255,255,255,0.1)_0,rgba(255,255,255,0.1)_1px,transparent_0,transparent_50%)]" />
-      </section>
-
-      <footer className="bg-white text-black px-6 py-10">
+      <HowItWorksSection />
+      {/* Footer Section */}
+      {/* <footer className="bg-white text-black px-6 py-10">
         <div className="p-5 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8  pb-10">
-          {/* Company Logo & Info */}
+       
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
@@ -264,7 +159,7 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Links Section */}
+        
           <div>
             <h3 className="text-lg font-semibold mb-4 text-gray-800">Links</h3>
             <ul className="space-y-2 text-sm">
@@ -295,7 +190,7 @@ export default function Home() {
             </ul>
           </div>
 
-          {/* Payment Section */}
+         
           <div>
             <h3 className="text-lg font-semibold mb-4 text-gray-800">
               Payment
@@ -311,7 +206,7 @@ export default function Home() {
               </li>
             </ul>
 
-            {/* Payment Icons */}
+           
             <div className="flex gap-3 mt-4">
               <Image src={visa} alt="Visa" width={40} height={25} />
               <Image src={card} alt="MasterCard" width={40} height={25} />
@@ -321,11 +216,13 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer Bottom */}
+      
         <div className="mt-6 text-center text-sm text-gray-600">
           Website designed by Sudhanshu Gaikwad © Kaizen AI - 2025
         </div>
-      </footer>
+      </footer> */}
+
+      <Footer />
     </div>
   );
 }
